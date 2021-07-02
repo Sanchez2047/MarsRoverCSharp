@@ -8,8 +8,6 @@ namespace MarsRoverTests
     [TestClass]
     public class RoverTests
     {
-        //Command[] newCommand = { new Command("MODE_CHANGE", "LOW_POWER") };
-
         [TestMethod]
         public void ConstructorSetsDefaultPosition()
         {
@@ -47,10 +45,10 @@ namespace MarsRoverTests
         [TestMethod]
         public void PositionChangesFromMoveCommand()
         {
-            Rover newRover = new Rover(15);
+            Rover newRover = new Rover(10);
             Command[] newCommands = { new Command("MOVE", 20) };
             newRover.ReceiveMessage(new Message("NEW COMMANDS", newCommands));
-            Assert.IsTrue(newRover.Position == 35);
+            Assert.IsTrue(newRover.Position == 30);
         }
         [TestMethod]
         public void RoverReturnsAMessageForAnUnkownComman()

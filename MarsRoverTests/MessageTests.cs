@@ -25,14 +25,14 @@ namespace MarsRoverTests
         public void ConstructorSetsName()
         {
             Message newMessage = new Message("Name of Message", commands);
-            Assert.AreEqual(newMessage.Name, "Name of Message");
+            Assert.AreEqual("Name of Message", newMessage.Name);
         }
         [TestMethod]
         public void ConstructorSetsCommandsField()
         {
             Message newMessage = new Message("Name of Message", commands);
-            Assert.AreEqual(commands[0].CommandType, "MOVE");
-            Assert.AreEqual(commands[1].NewPostion, 20);
+            Assert.AreEqual("MOVE", commands[0].CommandType);
+            Assert.AreEqual(20, commands[1].NewPostion);
         }
     }
 }

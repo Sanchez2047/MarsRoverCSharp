@@ -25,20 +25,20 @@ namespace MarsRoverTests
         public void ConstructorSetsCommandType()
         {
             Command newCommand = new Command("MOVE", 0);
-            Assert.AreEqual(newCommand.CommandType, "MOVE");
+            Assert.AreEqual("MOVE", newCommand.CommandType);
         }
 
         [TestMethod]
         public void ConstructorSetsInitialNewPositionValue()
         {
             Command newCommand = new Command("MOVE", 20);
-            Assert.AreEqual(newCommand.NewPostion, 20);
+            Assert.AreEqual(20, newCommand.NewPostion);
         }
         [TestMethod]
         public void ConstructorSetsInitialNewModeValue()
         {
             Command newCommand = new Command("MODE_CHANGE", "NORMAL");
-            Assert.AreEqual(newCommand.NewMode, "NORMAL");
+            Assert.AreEqual("NORMAL", newCommand.NewMode);
         }
 
     }
