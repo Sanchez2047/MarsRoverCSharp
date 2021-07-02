@@ -12,31 +12,50 @@ namespace MarsRover
 
         public Command(string commandType)
         {
-            CommandType = commandType;
             if (String.IsNullOrEmpty(commandType))
             {
                 throw new ArgumentNullException(commandType, "Command type required.");
+            }
+            else if (commandType == "MOVE" || commandType == "MODE_CHANGE")
+            {
+                CommandType = commandType;
+            }
+            else
+            {
+                throw new ArgumentException("COMMAND TYPE NOT RECOGNIZED.");
             }
         }
-
         public Command(string commandType, int value)
         {
-            CommandType = commandType;
             if (String.IsNullOrEmpty(commandType))
             {
                 throw new ArgumentNullException(commandType, "Command type required.");
             }
-            NewPostion = value;
+            else if (commandType == "MOVE" || commandType == "MODE_CHANGE")
+            {
+                CommandType = commandType;  
+                NewPostion = value;
+            }
+            else
+            {
+                throw new ArgumentException("COMMAND TYPE NOT RECOGNIZED.");
+            }
         }
         public Command(string commandType, string newMode)
         {
-            CommandType = commandType;
             if (String.IsNullOrEmpty(commandType))
             {
                 throw new ArgumentNullException(commandType, "Command type required.");
             }
-            NewMode = newMode;
+            else if (commandType == "MOVE" || commandType == "MODE_CHANGE")
+            {
+                CommandType = commandType;
+                NewMode = newMode;  
+            }
+            else
+            {
+                throw new ArgumentException("COMMAND TYPE NOT RECOGNIZED.");
+            }
         }
-
     }
 }

@@ -52,5 +52,17 @@ namespace MarsRoverTests
             newRover.ReceiveMessage(new Message("NEW COMMANDS", newCommands));
             Assert.IsTrue(newRover.Position == 35);
         }
+        [TestMethod]
+        public void RoverReturnsAMessageForAnUnkownComman()
+        {
+            try
+            {
+                new Command("SHUTDOWN");
+            }
+            catch (ArgumentException ex)
+            {
+                Assert.AreEqual("COMMAND TYPE NOT RECOGNIZED.", ex.Message);
+            }
+        }
     }
 }

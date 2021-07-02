@@ -20,7 +20,6 @@ namespace MarsRover
                 if (command.NewMode != null)
                 {
                     Mode = command.NewMode;
-
                 }
                 if (Mode != "LOW_POWER")
                 {
